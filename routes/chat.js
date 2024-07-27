@@ -55,7 +55,6 @@ router.post('/process-question', async function (req, res, next) {
       }
     ];
     const result = await generateText({
-      //model: google('models/gemini-1.5-flash'),
       model: openai('gpt-4o-mini'),
       maxTokens: 1000,
       system: systemPrompt,
