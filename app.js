@@ -18,10 +18,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configurar CORS
-app.use(cors()); 
+// Configurar CORS comment this for production
+//app.use(cors()); 
 
-app.use('/chat', chatRouter);
+app.use('/api/chats/v1', chatRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
