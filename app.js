@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configurar CORS comment this for production
+// Configurar CORS (comenta esto para producción)
 //app.use(cors()); 
 
 app.use('/api/chats/v1', chatRouter);

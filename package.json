@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./server.js",
+    "dev": "pm2 start ecosystem.config.js",
+    "prod": "pm2 start ecosystem.config.js --env production"
   },
   "dependencies": {
     "@ai-sdk/google": "^0.0.27",
