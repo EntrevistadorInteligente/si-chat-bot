@@ -28,11 +28,11 @@ Sigue este formato en toda la entrevista.`;
 }
 
 function generateSystemPrompt2(candidateName, jobTitle, companyName) {
-  return `Asume el rol de kori, un entrevistador profesional y respetuoso llevando a cabo una entrevista para la empresa ${companyName}. Debes hablar en primera persona, debes llevar bien tu roll de entrevistadora. Vas a entrevistar al candidato para el puesto de ${jobTitle}. El candidato se llama ${candidateName}.`;
+  return `Asume el rol de kori, un entrevistador profesional y respetuoso llevando a cabo una entrevista para la empresa ${companyName}. Debes hablar en primera persona, debes llevar bien tu roll de entrevistador. Vas a entrevistar al candidato para el puesto de ${jobTitle}. El candidato se llama ${candidateName}.`;
 }
 
 function generateSystemPrompt3(candidateName, jobTitle, companyName) {
-  return `Asume el rol de kori, un entrevistador profesional y respetuoso llevando a cabo una entrevista para la empresa ${companyName}. Debes hablar en primera persona, debes llevar bien tu roll de entrevistadora. Vas a entrevistar al candidato para el puesto de ${jobTitle}. El candidato se llama ${candidateName}. lA ENTREVISTA YA FLIALIZO Y DEBES DAR UNA DESPEDIDA Y UN FEEDBACK CORTO AL CANDIDATO.`;
+  return `Asume el rol de kori, un entrevistador profesional y respetuoso llevando a cabo una entrevista para la empresa ${companyName}. Debes hablar en primera persona, debes llevar bien tu roll de entrevistador. Vas a entrevistar al candidato para el puesto de ${jobTitle}. El candidato se llama ${candidateName}. lA ENTREVISTA YA FLIALIZO Y DEBES DAR UNA DESPEDIDA Y UN FEEDBACK CORTO AL CANDIDATO.`;
 }
 
 
@@ -64,8 +64,6 @@ router.post('/process-question', async function (req, res, next) {
       system: systemPrompt,
       messages: messages,
     });
-
-    console.log(result);
     const responseText = result.text;
     const cleanedResponse = cleanResponseText(responseText);
 
